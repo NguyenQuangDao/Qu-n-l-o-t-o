@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/QuanLyDaoTao/static/css/main.d57ab360.css",
+    "main.js": "/QuanLyDaoTao/static/js/main.5fa60012.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/QuanLyDaoTao/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/QuanLyDaoTao/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/QuanLyDaoTao/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/QuanLyDaoTao/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/QuanLyDaoTao/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/logo.png": "/QuanLyDaoTao/static/media/logo.b6a0736235ab94c4526f.png",
+    "index.html": "/QuanLyDaoTao/index.html",
+    "main.d57ab360.css.map": "/QuanLyDaoTao/static/css/main.d57ab360.css.map",
+    "main.5fa60012.js.map": "/QuanLyDaoTao/static/js/main.5fa60012.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d57ab360.css",
+    "static/js/main.5fa60012.js"
+  ]
+}
