@@ -22,13 +22,11 @@ function Collaborator() {
         gender: '',
 
     })
-
     const [listInfoCTV, setListInfoCTV] = useState([])
     const handleValue = (e) => {
         const name = e.target.name;
         const value = e.target.value
         setInfoCTV({ ...infoCTV, [name]: value })
-
     }
     useEffect(() => {
         axios.get('http://localhost:8080/api/auth/user/list')
@@ -37,7 +35,6 @@ function Collaborator() {
             })
             .catch(err => console.log(err))
     }, [checkEdit])
-
     const handleAdd = () => {
         axios.post('http://localhost:8080/api/auth/user/create', infoCTV)
             .then(res => {
@@ -115,6 +112,7 @@ function Collaborator() {
         })
         toggle()
     }
+    const [filterSearch, setFilterSearch] = useState("")
     return (
         <>
             <div  style={{
@@ -137,7 +135,7 @@ function Collaborator() {
 
                         <Col md={6} style={{ display: 'flex', justifyContent: "left" }} >
 
-                            <Search />
+                            <Search setFilterSearch={setFilterSearch}/>
                         </Col>
                         <Col md={6} style={{ display: 'flex', justifyContent: "right" }}>
 
@@ -151,7 +149,7 @@ function Collaborator() {
 
                 <div style={{ marginLeft: '50px', marginRight: '50px', marginTop: "20px" }}>
 
-                    <Table_CTV listInfoCTV={listInfoCTV} handleDelete={handleDelete} edit={edit} 
+                    <Table_CTV filterSearch={filterSearch} listInfoCTV={listInfoCTV} handleDelete={handleDelete} edit={edit} 
                     
                     />
                 </div>

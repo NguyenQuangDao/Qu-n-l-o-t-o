@@ -43,8 +43,8 @@ function FormCadres(props) {
                 value={link.NameCTV}
               >
                 <option></option>
-                {listCTV.map((item) => {
-                  return <option>{item.full_name}</option>;
+                {listCTV.map((item, index) => {
+                  return <option key={index}>{item.full_name}</option>;
                 })}
               </select>
             )}

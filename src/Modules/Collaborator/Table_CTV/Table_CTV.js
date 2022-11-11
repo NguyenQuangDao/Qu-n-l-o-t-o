@@ -1,14 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import { Table } from "reactstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen ,faTrash} from "@fortawesome/free-solid-svg-icons";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 function Table_CTV(prop) {
-    const {listInfoCTV,handleDelete,edit} = prop
+    const { listInfoCTV, handleDelete, edit, filterSearch } = prop
     // console.log(listInfoCTV);
     return (
         <>
             <Table bordered>
-                <thead style={{background:'rgb(10, 145, 10)', color:'white', textAlign:'center'}}>
+                <thead style={{ background: 'rgb(10, 145, 10)', color: 'white', textAlign: 'center' }}>
                     <tr>
                         <th>
                             STT
@@ -29,10 +29,10 @@ function Table_CTV(prop) {
                             Password
                         </th> */}
                         <th>
-                            Chức vụ 
+                            Chức vụ
                         </th>
                         <th>
-                           Giới Tính
+                            Giới Tính
                         </th>
                         <th>
                             Action
@@ -40,10 +40,23 @@ function Table_CTV(prop) {
                     </tr>
                 </thead>
                 <tbody>
-                    {listInfoCTV.map((item,index)=>{
-                        return(
+                    {listInfoCTV.filter((item) => {
+                        if (filterSearch == "") {
+                            return item
+                        } else if (item.full_name.toLowerCase().includes(filterSearch.toLowerCase())) {
+                            return item
+                        } else if (item.phone.toLowerCase().includes(filterSearch.toLowerCase())) {
+                            return item
+                        } else if (item.gender.toLowerCase().includes(filterSearch.toLowerCase())) {
+                            return item
+                        }
+                        else if (item.email.toLowerCase().includes(filterSearch.toLowerCase())) {
+                            return item
+                        }
+                    }).map((item, index) => {
+                        return (
                             <tr key={index}>
-                                <td>{index+1}</td>
+                                <td>{index + 1}</td>
                                 <td>{item.full_name}</td>
                                 <td>{item.email}</td>
                                 <td>{item.phone}</td>
@@ -52,10 +65,10 @@ function Table_CTV(prop) {
                                 <td>{item.roles}</td>
                                 <td>{item.gender}</td>
                                 <td>
-                                <button onClick={(e)=> edit(item._id)}> <FontAwesomeIcon icon={faPen} /></button>
-                                <button onClick={(e)=> handleDelete(index)}> <FontAwesomeIcon icon={faTrash} /></button>
+                                    <button onClick={(e) => edit(item._id)}> <FontAwesomeIcon icon={faPen} /></button>
+                                    <button onClick={(e) => handleDelete(index)}> <FontAwesomeIcon icon={faTrash} /></button>
                                 </td>
-                                
+
 
                             </tr>
                         )
@@ -65,4 +78,4 @@ function Table_CTV(prop) {
         </>
     )
 }
-export default Table_CTV;
+export default memo(Table_CTV);

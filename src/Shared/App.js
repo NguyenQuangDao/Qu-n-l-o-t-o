@@ -5,12 +5,11 @@ import "./App.scss";
 import Login from "./Auth/Login";
 import Cadres from "../Modules/Cadres/Cadres";
 import { path } from "../ulits/constant";
-import Navbar from "./NavBar/NavBar";
+import Navbar from "./NavBar/NavBar"; 
 import Collaborator from "../Modules/Collaborator/Collaborator";
 function App() {
 
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user);
   return (
     <Router>
       <div className="App">
